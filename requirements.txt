@@ -1,0 +1,10 @@
+# Core HTTP client for communicating with Ollama and other providers
+httpx==0.28.1
+
+# Environment variable loading from .env files
+python-dotenv==1.1.1
+
+# HTTP API, validation, and ASGI server
+fastapi==0.141.1
+pydantic==2.13.5
+uvicorn==0.53.0
