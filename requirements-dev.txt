@@ -1,0 +1,4 @@
+-r requirements.txt
+
+# Development lint and format checks
+ruff==0.16.8

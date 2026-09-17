@@ -20,6 +20,7 @@ This means the provider can be swapped without touching this file.
 """
 
 from app.providers.base import BaseProvider
+from app.providers.errors import InvalidProviderResponseError
 
 
 class AIService:
@@ -49,9 +50,12 @@ class AIService:
         Returns:
             The AI-generated response string.
         """
+        if not isinstance(prompt, str) or not prompt.strip():
+            raise ValueError("Prompt must be a non-empty string")
         # Future: add prompt enrichment, RAG context, tool selection here
         response = self.provider.generate(prompt)
-        # Future: add response validation, formatting, logging here
+        if not isinstance(response, str) or not response.strip():
+            raise InvalidProviderResponseError("AI provider returned no valid response text")
         return response
 
     def __repr__(self) -> str:

@@ -1,1 +1,1 @@
-# rag package — placeholder for future Retrieval-Augmented Generation pipeline
+"""Storage abstractions and local retrieval for context-augmented generation."""
